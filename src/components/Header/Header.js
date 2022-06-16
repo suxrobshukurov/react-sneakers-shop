@@ -1,5 +1,5 @@
 import styles from './Header.module.scss';
-export const Header = () => {
+export const Header = ({ onClickCart }) => {
   return (
     <header className={styles.header}>
       <div className="d-flex align-center">
@@ -14,7 +14,7 @@ export const Header = () => {
         </div>
       </div>
       <ul className="d-flex ">
-        <li className={styles.basket}>
+        <li className={styles.basket} onClick={onClickCart}>
           <img src="/img/card.svg" width={18} height={18} alt="" />
           <span>1205 руб.</span>
         </li>

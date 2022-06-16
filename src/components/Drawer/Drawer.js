@@ -1,12 +1,12 @@
 import styles from './Drawer.module.scss';
 
-export const Drawer = () => {
+export const Drawer = ({ onClose }) => {
   return (
-    <div style={{ display: 'none' }} className={styles.overlay}>
+    <div className={styles.overlay}>
       <div className={styles.drawer}>
         <div className={styles.cartHeader}>
           <h2 className=''>Корзина</h2>
-          <img src="/img/cart-remove.svg" alt="Close" />
+          <img src="/img/cart-remove.svg" alt="Close" onClick={onClose} />
         </div>
         <div className={styles.items}>
           <div className={styles.cartItem}>
