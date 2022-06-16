@@ -1,4 +1,11 @@
-import { Header, Card, Drawer } from './components/index'
+import { Header, Card, Drawer } from './components/index';
+
+const sneakers = [
+  { title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12999, imageUrl: '/img/sneakers/1.jpg' },
+  { title: 'Мужские Кроссовки Nike Air Max 270', price: 12999, imageUrl: '/img/sneakers/2.jpg' },
+  { title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 8499, imageUrl: '/img/sneakers/3.jpg' },
+  { title: 'Кроссовки Puma X Aka Boku Future Rider', price: 8999, imageUrl: '/img/sneakers/4.jpg' },
+]
 
 function App() {
   return (
@@ -9,15 +16,16 @@ function App() {
         <div className='d-flex align-center justify-between	'>
           <h1>Все кроссовки</h1>
           <div className="search-block d-flex align-center">
-            <img src="/img/search.svg" alt="Search" />
-            <input type="text" placeholder='Поиск...' />
+            <label htmlFor="search">
+              <img src="/img/search.svg" alt="Search" />
+            </label>
+            <input type="text" placeholder='Поиск...' id='search' />
           </div>
         </div>
         <div className="sneakers d-flex flex-wrap">
-          <Card name='Мужские Кроссовки Nike Blazer Mid Suede' price='12 999' img='/img/sneakers/1.jpg' />
-          <Card name='Мужские Кроссовки Nike Blazer Mid Suede' price='12 999' img='/img/sneakers/2.jpg' />
-          <Card name='Мужские Кроссовки Nike Blazer Mid Suede' price='12 999' img='/img/sneakers/3.jpg' />
-          <Card name='Мужские Кроссовки Nike Blazer Mid Suede' price='12 999' img='/img/sneakers/4.jpg' />
+          {
+            sneakers.map((sneaker, i) => <Card title={sneaker.title} price={sneaker.price} imageUrl={sneaker.imageUrl} key={i} />)
+          }
 
         </div>
       </div>
